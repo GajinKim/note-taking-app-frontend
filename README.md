@@ -1,17 +1,22 @@
-`Vite` - Does two things
-- lightweight frontend webserver (for development)
-- build static content for production
+## Frontend Setup
 
-- Get Started with: `npm create vite@latest`
-- Only used during development (when going to production, build it with Vite then upload the build to S3)
-  - But Vite itself will not exist in S3, just the files that exist
-- "Builds" static content (i.e. converts typescript to javascript)
+### `Vite` used to:
+- lightweight frontend webserver for development
+- build folder for static content `(/dist)` for production (e.g. uploading to S3 bucket)
+  - web pages can't read Typescript, so it converts any TS files to JS along with any HTML and CSS files
+
+### Getting Started with `Vite`
+
+- `npm create vite@latest`
+
+### Running frontend Vite server
+
+- `npm run dev`
 
 Vite vs npm init
 
 - Vite creates web server for frontend
 - npm init - just creates a project, but no web server
-
 
 `Commands`
 
