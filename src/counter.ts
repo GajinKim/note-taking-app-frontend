@@ -1,9 +1,12 @@
-export function setupCounter(element: HTMLButtonElement) {
-  let counter = 0
-  const setCounter = (count: number) => {
-    counter = count
-    element.innerHTML = `count is ${counter}`
-  }
-  element.addEventListener('click', () => setCounter(counter + 1))
-  setCounter(0)
+let count = 0;
+let countButton = document.getElementById('count')!;
+
+countButton.innerText = count.toString();
+// let acountrButton = document.querySelector('#counter-button')!;
+let counterButton = document.getElementById('counter-button')!; // ! at the end, "don't worry about it being null"
+counterButton.onclick = () => updateCount();
+
+function updateCount() {
+  count++;
+  countButton.innerText = count.toString();
 }

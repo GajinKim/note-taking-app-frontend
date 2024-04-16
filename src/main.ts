@@ -1,13 +1,5 @@
 import './style.css'
 
-let count = 0;
-let countElement = document.getElementById('count')!;
-
-countElement.innerText = count.toString();
-// let acountrButton = document.querySelector('#counter-button')!;
-let counterButton = document.getElementById('counter-button')!; // ! at the end says, "don't worry about it being null"
-counterButton.onclick = () => updateCount();
-
 // -- ? syntax
 
 // let x = {
@@ -23,11 +15,6 @@ counterButton.onclick = () => updateCount();
 
 // let y = x && 3 // if left hand side (x) is "truthy", return right side, if left hand side is falsey, return left hand side
 /////////////////
-
-function updateCount() {
-  count++;
-  countElement.innerText = count.toString();
-}
 
 async function callApiDefault() {
   console.log(await (await fetch('http://localhost:3000')).json());
@@ -70,6 +57,14 @@ pushInputToArrayButton!.onclick = () => pushInputToArrayApi((document.getElement
 
 // let x = console.log('asdf'); // assigns the return value of "console.log('asdf');" (which is 'undefined') to variable x
 // let y = () => console.log('asdf'); // assigns the function "console.log('asdf');" to variable y
+
+// () => functionName(); // runs the function (anonymous function)
+// Bar('foo', () => functionName()); // in this example, event data (doesn't get passed),
+
+/* The two below are equivalent */
+// Bar('foo', (e) => functionName(e));
+// Bar('foo', functionName);
+
 
 // console.log(x);
 // y(); 
